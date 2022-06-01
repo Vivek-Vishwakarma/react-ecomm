@@ -4,9 +4,9 @@ import "../App.css";
 import { AiFillStar } from "react-icons/ai";
 import Cart from "../context/Cart";
 
-const Single = ({ ele }) => {
+const Single = ({ ele, isCart }) => {
   const cartitem = useContext(Cart);
-  const { addtocart } = cartitem;
+  const { addtocart, rerender, setRerender } = cartitem;
   return (
     <Card className="m-4" style={{ width: "18rem" }}>
       <Card.Img variant="top" src={ele.image} />
@@ -31,17 +31,24 @@ const Single = ({ ele }) => {
           <Button variant="danger" disabled>
             Out of Stock
           </Button>
-        ) : (
+        ) : isCart === false ? (
           <Button
             variant="primary"
             value={ele.id}
             onClick={(e) => {
               addtocart(e.target.value);
+              // setRerender(!rerender);
             }}
           >
             Add to Cart
           </Button>
-        )}
+        ) : (
+          <Button
+            variant="danger"
+          >
+            Remove from Cart
+          </Button>
+        ) }
       </Card.Body>
     </Card>
   );

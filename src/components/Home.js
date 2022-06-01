@@ -13,7 +13,7 @@ const Home = () => {
       <div className="container d-flex flex-wrap">
       {
         products.map((ele)=>{
-          return <Single ele={ele} key={ele.id} />
+          return <Single isCart={false} ele={ele} key={ele.id} />
         })
       }
       </div>

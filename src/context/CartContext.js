@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import faker from "faker";
 import Cart from "./Cart";
 const CartContext = ({ children }) => {
-  const [rerender, setRerender] = useState(false);
-  // const [item, setItem] = useState([]);
-  const item = [];
+  // const [rerender, setRerender] = useState(false);
+  const [item, setItem] = useState([]);
+  // const item = [];
   const products = [...Array(20)].map(() => ({
     id: faker.datatype.uuid(),
     name: faker.commerce.productName(),
@@ -17,14 +17,20 @@ const CartContext = ({ children }) => {
   const addtocart = (e) => {
     products.forEach((elem) => {
       if (elem.id === e) {
-        item.push(elem);
+        setItem([...item, elem]);
       }
     });
-    console.log(item);
   };
+  // const removeCart = (e) => {
+  //   products.forEach((elem) => {
+  //     if (elem.id === e) {
+  //       item.push(elem);
+  //     }
+  //   });
+  // };
 
   return (
-    <Cart.Provider value={{ products, addtocart, item, rerender, setRerender }}>
+    <Cart.Provider value={{ products, addtocart, item }}>
       {children}
     </Cart.Provider>
   );

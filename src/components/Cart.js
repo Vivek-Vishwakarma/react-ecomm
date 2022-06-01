@@ -12,7 +12,7 @@ const Cart = () => {
       <div className="container d-flex flex-wrap">
       {
         item && item.map((ele)=>{
-          return <Single ele={ele} key={ele.id} />
+          return <Single isCart={true} ele={ele} key={ele.id} />
         })
       }
       </div>

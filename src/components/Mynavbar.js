@@ -14,13 +14,10 @@ import { BsCartFill } from "react-icons/bs";
 const Mynavbar = () => {
   const [cartadd, setCartadd] = useState();
   const cartitem = useContext(Cart);
-  const { item } = cartitem;
-  const getItems = () => {
-    setCartadd(item);
-  };
+  const { item, rerender } = cartitem;
   useEffect(() => {
-    getItems();
-  }, []);
+    setCartadd(item)
+  }, [rerender]);
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
@@ -46,7 +43,6 @@ const Mynavbar = () => {
               <BsCartFill fontSize="25px" />
             </Dropdown.Toggle>
             <Dropdown.Menu>
-              <Dropdown.Item>Iphone</Dropdown.Item>
               {cartadd &&
                 cartadd.map((element) => {
                   return (
