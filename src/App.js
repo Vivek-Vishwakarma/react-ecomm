@@ -1,19 +1,19 @@
  // eslint-disable-next-line
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
+import { actions } from './store';
 
 function App() {
   const counter = useSelector((state) => state.counter)
   const dispatch = useDispatch()
   const inc = () =>{
-    dispatch({type : "INC"})
+    dispatch(actions.inc())
   }
   const dec = () =>{
-    dispatch({type : "DEC"})
+    dispatch(actions.dec())
   }
   const add = () => {
-    dispatch({type : "ADD", payload : 10})
+    dispatch(actions.add(10))
   }
   
   return (
