@@ -10,8 +10,8 @@ function App() {
         <Router>
           <Mynavbar />
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/cart" element={<Cart />} />
+            <Route exact="true" path="/react-ecomm-frontend" element={<Home />} />
+            <Route exact="true" path="/cart" element={<Cart />} />
           </Routes>
         </Router>
     </>
