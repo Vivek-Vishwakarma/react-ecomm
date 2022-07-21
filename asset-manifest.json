@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-ecomm-frontend/static/css/main.32cb0ac1.css",
+    "main.js": "/react-ecomm-frontend/static/js/main.d915291a.js",
+    "index.html": "/react-ecomm-frontend/index.html",
+    "main.32cb0ac1.css.map": "/react-ecomm-frontend/static/css/main.32cb0ac1.css.map",
+    "main.d915291a.js.map": "/react-ecomm-frontend/static/js/main.d915291a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.32cb0ac1.css",
+    "static/js/main.d915291a.js"
+  ]
+}
