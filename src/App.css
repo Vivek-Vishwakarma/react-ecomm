@@ -1,0 +1,11 @@
+.sidebar{
+    margin-right: 0 !important;
+    position: sticky;
+    top: 80px;
+}
+.section{
+    display: flex;
+}
+.pro-sidebar-layout{
+    padding: 10px 20px;
+}

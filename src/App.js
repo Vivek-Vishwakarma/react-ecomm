@@ -1,28 +1,19 @@
- // eslint-disable-next-line
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { actions } from './store';
+import "bootstrap/dist/css/bootstrap.min.css";
+import Mynavbar from "./components/Mynavbar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import Cart from "./components/Cart";
 
 function App() {
-  const counter = useSelector((state) => state.counter)
-  const dispatch = useDispatch()
-  const inc = () =>{
-    dispatch(actions.inc())
-  }
-  const dec = () =>{
-    dispatch(actions.dec())
-  }
-  const add = () => {
-    dispatch(actions.add(10))
-  }
-  
   return (
     <>
-      {counter}
-      <br />
-      <button onClick={inc}>Increment</button>
-      <button onClick={dec}>Decrement</button>
-      <button onClick={add}>Add by 10</button>
+        <Router>
+          <Mynavbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/cart" element={<Cart />} />
+          </Routes>
+        </Router>
     </>
   );
 }
